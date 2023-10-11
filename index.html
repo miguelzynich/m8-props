@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hello World em Formas Diferentes</title>
+    <style>
+      .shape {
+        display: inline-block;
+        margin: 10px;
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
+        border-radius: 10px;
+        border: 2px solid #333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="shape" id="textShape">ebac</div>
+    <div class="shape" id="textShape2">Hello World 1</div>
+    <div class="shape" id="textShape6">Hello World 6</div>
+
+    <script>
+      document.getElementById("textShape").textContent = "Hello World 1";
+
+      const listElement = document.createElement("ul");
+      const listItem = document.createElement("li");
+      listItem.textContent = "Hello World 2";
+      listElement.appendChild(listItem);
+      document.body.appendChild(listElement);
+
+      alert("Hello World 3");
+
+      console.log("Hello World 4");
+
+      if (confirm("Hello World 1")) {
+        document.getElementById("textShape2").textContent = "Hello World 5";
+      }
+
+      const textShape = document.getElementById("textShape6");
+      textShape.style.color = "red";
+      textShape.textContent = "Hello World 6";
+
+      const buttonElement = document.createElement("button");
+      buttonElement.textContent = "Hello World 7";
+      buttonElement.onclick = function () {
+        alert("Hello World 7");
+      };
+      document.body.appendChild(buttonElement);
+
+      setTimeout(function () {
+        alert("Hello World 8");
+      }, 2000);
+
+      const linkElement = document.createElement("a");
+      linkElement.href = "#";
+      linkElement.textContent = "Hello World 9";
+      linkElement.onclick = function () {
+        alert("Hello World (Forma 9)");
+      };
+      document.body.appendChild(linkElement);
+
+      let count = 0;
+      const intervalId = setInterval(function () {
+        alert("Hello World 10 (" + ++count + ")");
+        if (count === 1) {
+          clearInterval(intervalId);
+        }
+      }, 2000);
+    </script>
+  </body>
+</html>
