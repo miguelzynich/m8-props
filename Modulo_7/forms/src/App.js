@@ -1,9 +1,7 @@
 import React from 'react';
-import Formulario from './Formulario'; // Importe o componente Formulario
-
+import Formulario from './Formulario'; 
 const App = () => {
   const enviarResposta = (formData) => {
-    // Lógica para lidar com a resposta do formulário
     console.log(formData);
   };
 
