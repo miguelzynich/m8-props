@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './App.css';
+import './App.css'; 
 
 const Formulario = ({ enviarResposta }) => {
-  const [formData, setFormData] = useState({ nome: '', idade: 0, genero: '' });
+  const [formData, setFormData] = useState({ nome: '', idade: '', genero: 'Masculino' });
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -13,12 +13,11 @@ const Formulario = ({ enviarResposta }) => {
     event.preventDefault();
     enviarResposta(formData);
     console.log('Formulário enviado:', formData);
-    setFormData({ nome: '', idade: 0, genero: '' }); 
-    window.location.reload(); 
+    setFormData({ nome: '', idade: '', genero: 'Masculino' }); 
   };
 
   return (
-    <form onSubmit={handleFormSubmit}>
+    <form onSubmit={handleFormSubmit} className="formulario">
       <div className="form-group">
         <label>
           Nome:
@@ -27,6 +26,7 @@ const Formulario = ({ enviarResposta }) => {
             name="nome"
             value={formData.nome}
             onChange={handleInputChange}
+            required 
           />
         </label>
       </div>
@@ -38,6 +38,8 @@ const Formulario = ({ enviarResposta }) => {
             name="idade"
             value={formData.idade}
             onChange={handleInputChange}
+            min="0" 
+            required
           />
         </label>
       </div>
